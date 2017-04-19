@@ -1,9 +1,14 @@
-# api documentation for  [jsonparse (v1.3.0)](https://github.com/creationix/jsonparse#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-jsonparse.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-jsonparse) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-jsonparse.svg)](https://travis-ci.org/npmdoc/node-npmdoc-jsonparse)
+# npmdoc-jsonparse
+
+#### api documentation for  [jsonparse (v1.3.0)](https://github.com/creationix/jsonparse#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-jsonparse.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-jsonparse) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-jsonparse.svg)](https://travis-ci.org/npmdoc/node-npmdoc-jsonparse)
+
 #### This is a pure-js JSON streaming parser for node.js
 
-[![NPM](https://nodei.co/npm/jsonparse.png?downloads=true)](https://www.npmjs.com/package/jsonparse)
+[![NPM](https://nodei.co/npm/jsonparse.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/jsonparse)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-jsonparse/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-jsonparse_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-jsonparse/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-jsonparse/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-jsonparse/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-jsonparse/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-jsonparse/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-jsonparse/build/screenCapture.npmPackageListing.svg)
 
@@ -17,8 +22,7 @@
 
 {
     "author": {
-        "name": "Tim Caswell",
-        "email": "tim@creationix.com"
+        "name": "Tim Caswell"
     },
     "bugs": {
         "url": "http://github.com/creationix/jsonparse/issues"
@@ -43,17 +47,14 @@
     "main": "jsonparse.js",
     "maintainers": [
         {
-            "name": "creationix",
-            "email": "tim@creationix.com"
+            "name": "creationix"
         },
         {
-            "name": "substack",
-            "email": "mail@substack.net"
+            "name": "substack"
         }
     ],
     "name": "jsonparse",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+ssh://git@github.com/creationix/jsonparse.git"
@@ -67,51 +68,6 @@
     ],
     "version": "1.3.0"
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module jsonparse](#apidoc.module.jsonparse)
-1.  [function <span class="apidocSignatureSpan">jsonparse.</span>toknam (code)](#apidoc.element.jsonparse.toknam)
-1.  object <span class="apidocSignatureSpan">jsonparse.</span>C
-
-
-
-# <a name="apidoc.module.jsonparse"></a>[module jsonparse](#apidoc.module.jsonparse)
-
-#### <a name="apidoc.element.jsonparse.toknam"></a>[function <span class="apidocSignatureSpan">jsonparse.</span>toknam (code)](#apidoc.element.jsonparse.toknam)
-- description and source-code
-```javascript
-toknam = function (code) {
-  var keys = Object.keys(C);
-  for (var i = 0, l = keys.length; i < l; i++) {
-    var key = keys[i];
-    if (C[key] === code) { return key; }
-  }
-  return code && ("0x" + code.toString(16));
-}
-```
-- example usage
-```shell
-...
-return code && ("0x" + code.toString(16));
-};
-
-var proto = Parser.prototype;
-proto.onError = function (err) { throw err; };
-proto.charError = function (buffer, i) {
-this.tState = STOP;
-this.onError(new Error("Unexpected " + JSON.stringify(String.fromCharCode(buffer[i])) + " at position " + i + " in state " + Parser
-.toknam(this.tState)));
-};
-proto.appendStringChar = function (char) {
-if (this.stringBufferOffset >= STRING_BUFFER_SIZE) {
-  this.string += this.stringBuffer.toString('utf8');
-  this.stringBufferOffset = 0;
-}
-...
 ```
 
 
