@@ -63,6 +63,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.jsonparse.jsonparse">
+            function <span class="apidocSignatureSpan"></span>jsonparse
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.jsonparse.toknam">
             function <span class="apidocSignatureSpan">jsonparse.</span>toknam
             <span class="apidocSignatureSpan">(code)</span>
@@ -82,6 +91,39 @@
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.jsonparse" id="apidoc.module.jsonparse">module jsonparse</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jsonparse.jsonparse" id="apidoc.element.jsonparse.jsonparse">
+        function <span class="apidocSignatureSpan"></span>jsonparse
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Parser() {
+  this.tState = START;
+  this.value = undefined;
+
+  this.string = undefined; // string data
+  this.stringBuffer = Buffer.alloc ? Buffer.alloc(STRING_BUFFER_SIZE) : new Buffer(STRING_BUFFER_SIZE);
+  this.stringBufferOffset = 0;
+  this.unicode = undefined; // unicode escapes
+
+  this.key = undefined;
+  this.mode = undefined;
+  this.stack = [];
+  this.state = VALUE;
+  this.bytes_remaining = 0; // number of bytes remaining in multi byte utf8 char to read after split boundary
+  this.bytes_in_sequence = 0; // bytes in multi byte utf8 char to read
+  this.temp_buffs = { &#x22;2&#x22;: new Buffer(2), &#x22;3&#x22;: new Buffer(3), &#x22;4&#x22;: new Buffer(4) }; // for rebuilding chars split before boundary
+ is reached
+
+  // Stream offset
+  this.offset = -1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
